@@ -1,10 +1,11 @@
+using Autofac;
 using Orchard.Environment;
 
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-IOrchardHost host=new DefaultOrchardHost( new RunningShellTable());
+IOrchardHost host= OrchardStarter.CreateHost(MvcSingletons);  //new DefaultOrchardHost( new RunningShellTable());
 
 host.Initialize();
 
@@ -29,3 +30,11 @@ static void HandleMap2(IApplicationBuilder app) {
         async context => { await context.Response.WriteAsync("Hello from /map2!"); });
 }
 
+static void MvcSingletons(ContainerBuilder builder)
+{
+    /****
+        builder.Register(ctx => RouteTable.Routes).SingleInstance();
+        builder.Register(ctx => ModelBinders.Binders).SingleInstance();
+        builder.Register(ctx => ViewEngines.Engines).SingleInstance();
+    ****/
+}

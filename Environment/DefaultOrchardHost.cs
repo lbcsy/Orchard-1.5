@@ -16,16 +16,15 @@ public class DefaultOrchardHost : IOrchardHost {
         throw new NotImplementedException();
     }
 
-    public async Task BeginRequest(HttpContext context) {
+    public void BeginRequest(HttpContext context) {
         
             //await context.Response.WriteAsync("Hello from Orchard 1.5!");
             //await context.Response.WriteAsync("2nd line, Hello from Orchard 1.5!");
 
         /****
         BlockRequestsDuringSetup();
-
-
         ****/
+
         Action ensureInitialized = () => {
             // Ensure all shell contexts are loaded, or need to be reloaded if
             // extensions have changed
@@ -39,7 +38,7 @@ public class DefaultOrchardHost : IOrchardHost {
         ShellSettings currentShellSettings = null!;
         
 
-        //var httpContext = _httpContextAccessor.Current();
+        //--- var httpContext = _httpContextAccessor.Current();
         var httpContext = context;
 
         if (httpContext != null)
@@ -60,8 +59,8 @@ public class DefaultOrchardHost : IOrchardHost {
                 //**** );
         }
 
-        //// StartUpdatedShells can cause a writer shell activation lock so it should run outside the reader lock.
-        //StartUpdatedShells();
+        // StartUpdatedShells can cause a writer shell activation lock so it should run outside the reader lock.
+        //**** StartUpdatedShells();
     }
 
     public void EndRequest() {

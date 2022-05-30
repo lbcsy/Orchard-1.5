@@ -8,7 +8,49 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Localization\Commands\**" />
+    <Compile Remove="Localization\Models\**" />
+    <Compile Remove="Localization\Records\**" />
+    <Compile Remove="Localization\Services\**" />
+    <Content Remove="Localization\Commands\**" />
+    <Content Remove="Localization\Models\**" />
+    <Content Remove="Localization\Records\**" />
+    <Content Remove="Localization\Services\**" />
+    <EmbeddedResource Remove="Localization\Commands\**" />
+    <EmbeddedResource Remove="Localization\Models\**" />
+    <EmbeddedResource Remove="Localization\Records\**" />
+    <EmbeddedResource Remove="Localization\Services\**" />
+    <None Remove="Localization\Commands\**" />
+    <None Remove="Localization\Models\**" />
+    <None Remove="Localization\Records\**" />
+    <None Remove="Localization\Services\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Environment\HttpContext.cs" />
+    <Compile Remove="Localization\IText.cs" />
+    <Compile Remove="Localization\LocalizationExtensions.cs" />
+    <Compile Remove="Localization\LocalizationModule.cs" />
+    <Compile Remove="Localization\LocalizationUtilities.cs" />
+    <Compile Remove="Localization\Text.cs" />
+    <Compile Remove="Logging\CastleLogger.cs" />
+    <Compile Remove="Logging\CastleLoggerFactory.cs" />
+    <Compile Remove="Logging\ILoggerFactory.cs" />
+    <Compile Remove="Logging\LoggingExtensions.cs" />
+    <Compile Remove="Logging\LoggingModule.cs" />
+    <Compile Remove="Logging\NullLoggerFactory.cs" />
+    <Compile Remove="Logging\OrchardFileAppender.cs" />
+    <Compile Remove="Logging\OrchardLog4netFactory.cs" />
+    <Compile Remove="Logging\OrchardLog4netLogger.cs" />
+    <Compile Remove="Services\ClientHostAddressAccessor.cs" />
+    <Compile Remove="Services\DefaultJsonConverter.cs" />
+    <Compile Remove="Services\IClientHostAddressAccessor.cs" />
+    <Compile Remove="Services\IHtmlFilter.cs" />
+    <Compile Remove="Services\IJsonConverter.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.4.0" />
   </ItemGroup>
 
 </Project>

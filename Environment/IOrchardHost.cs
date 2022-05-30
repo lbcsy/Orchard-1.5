@@ -19,7 +19,7 @@ namespace Orchard.Environment {
         /// <summary>
         /// Called each time a request begins to offer a just-in-time reinitialization point
         /// </summary>
-        Task BeginRequest(HttpContext context);
+        void BeginRequest(HttpContext context);
 
         /// <summary>
         /// Called each time a request ends to deterministically commit and dispose outstanding activity
