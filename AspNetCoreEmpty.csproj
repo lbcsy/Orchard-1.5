@@ -4,6 +4,11 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Orchard</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Environment\HttpContext.cs" />
+  </ItemGroup>
 
 </Project>
